@@ -1,0 +1,2 @@
+alias nah="git stash && git stash drop"
+alias cat='bat --paging=never'

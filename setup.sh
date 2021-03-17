@@ -261,6 +261,14 @@ killall SystemUIServer
 #####################
 
 #
+# Bitwarden
+#
+# https://bitwarden.com/
+#
+brew install --cask bitwarden
+loginitems -a "Bitwarden"
+
+#
 # Brave Browser
 #
 # https://github.com/brave
@@ -342,6 +350,7 @@ git config --global advice.addIgnoredFile false
 # https://kitematic.com/
 #
 brew install --cask kitematic
+dockutil --add /Applications/Kitematic.app/ --allhomes
 
 #
 # massCode
@@ -356,6 +365,7 @@ brew install --cask masscode
 # https://www.postman.com
 #
 brew install --cask postman
+dockutil --add /Applications/Postman.app/ --allhomes
 
 #
 # Prettier
@@ -422,11 +432,20 @@ brew install --cask discord
 brew install --cask firefox
 
 #
+# Nextcloud
+#
+# https://nextcloud.com/
+#
+brew install --cask nextcloud
+loginitems -a "Nextcloud"
+
+#
 # Rectangle
 #
 # https://rectangleapp.com/
 #
 brew install --cask rectangle
+loginitems -a "Rectangle"
 
 #
 # Signal
@@ -441,6 +460,7 @@ brew install --cask signal
 # https://www.thunderbird.net/en-US/
 #
 brew install --cask thunderbird
+dockutil --add /Applications/Thunderbird.app/ --allhomes
 
 ##########################
 # Restore configurations #
@@ -454,6 +474,7 @@ mackup restore --force
 # Fonts #
 #       #
 #########
+
 brew tap homebrew/cask-fonts
 brew install --cask font-fira-sans
 brew install --cask font-fira-code
@@ -476,37 +497,23 @@ brew install --cask font-roboto-condensed
 
 
 
-duti -s com.colliderli.iina public.mpeg-4 all #mp4
-duti -s com.colliderli.iina com.apple.quicktime-movie all #mov
 duti -s com.microsoft.VSCode public.plain-text all #txt
 duti -s com.microsoft.VSCode dyn.ah62d4rv4ge8027pb all #lua
-duti -s com.colliderli.iina public.avi all #avi
-duti -s com.colliderli.iina public.3gpp all #3gp
-duti -s com.apple.Preview com.nikon.raw-image all #NEF
 duti -s com.microsoft.VSCode net.daringfireball.markdown all #Markdown
 duti -s com.brave.Browser public.svg-image all #svg
-duti -s net.kovidgoyal.calibre org.idpf.epub-container all # ePub
 duti -s com.microsoft.VSCode public.shell-script all #Shell script
 duti -s com.microsoft.VSCode com.apple.log all #log
 duti -s com.microsoft.VSCode public.comma-separated-values-text all #CSV
 duti -s com.microsoft.VSCode public.xml all #xml
 duti -s com.microsoft.VSCode public.json all #json
-duti -s com.microsoft.VSCode public.php-script all #php
-duti -s com.microsoft.VSCode dyn.ah62d4rv4ge81k3u all #terraform tf
-duti -s com.microsoft.VSCode dyn.ah62d4rv4ge81k3xxsvu1k3k all #terraform tfstate
-duti -s com.microsoft.VSCode dyn.ah62d4rv4ge81k3x0qf3hg all #terraform tfvars
-duti -s com.colliderli.iina com.microsoft.waveform-audio all #wav
+duti -s com.microsoft.VSCode public.php-script all #phps
 duti -s com.apple.Preview com.adobe.pdf all #pdf
-duti -s com.colliderli.iina public.mp3 all #mp3
-duti -s net.kovidgoyal.calibre dyn.ah62d4rv4ge80c8x1gq all #Kindle ebooks
-duti -s com.colliderli.iina com.apple.m4a-audio all #M4A
 duti -s net.langui.WebPViewer public.webp all #WebP
 duti -s com.microsoft.VSCode dyn.ah62d4rv4ge81g6pq all #SQL
 duti -s com.apple.Preview org.openxmlformats.presentationml.presentation all #PPTX
 duti -s com.microsoft.VSCode public.css all #CSS
 duti -s com.microsoft.VSCode com.netscape.javascript-source all #JavaScript
 duti -s com.microsoft.VSCode public.ruby-script all #Ruby
-duti -s com.apple.Preview public.standard-tesselated-geometry-format all #3d CAD
 duti -s com.brave.Browser com.compuserve.gif all #gif
 
 ###################
@@ -516,10 +523,32 @@ duti -s com.brave.Browser com.compuserve.gif all #gif
 ###################
 
 dockutil --move 'Brave Browser' --position end --allhomes
+dockutil --move 'Thunderbird' --position end --allhomes
 dockutil --move 'Slack' --position end --allhomes
-dockutil --move 'Spotify' --position end --allhomes
-dockutil --move 'iTerm' --position end --allhomes
 dockutil --move 'Visual Studio Code' --position end --allhomes
+dockutil --move 'Postman' --position end --allhomes
+dockutil --move 'Kitematic' --position end --allhomes
+dockutil --move 'iTerm' --position end --allhomes
+dockutil --move 'Spotify' --position end --allhomes
+
+###############
+#             #
+# Dock spacer #
+#             #
+###############
+
+dockutil --add '' --type spacer --after 'Thunderbird'
+dockutil --add '' --type spacer --after 'Slack'
+dockutil --add '' --type spacer --after 'Visual Studio Code'
+dockutil --add '' --type spacer --after 'iTerm'
+
+###############
+#             #
+# Zsh Plugins #
+#             #
+###############
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+/bin/mv -f /configs/zsh/{,.}* $HOME
 
 #######
 #     #
