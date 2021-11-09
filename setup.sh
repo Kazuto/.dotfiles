@@ -1,15 +1,5 @@
 email="mail@kazuto.de"
 
-#
-# iTerm2
-#
-# https://iterm2.com
-#
-open https://iterm2.com/downloads/stable/latest
-mv iTerm.app /Applications/
-open iTerm
-exit
-
 ssh-keygen -t rsa -b 4096 -C $email
 ssh-add -K ~/.ssh/id_rsa
 ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
@@ -280,6 +270,12 @@ defaults write com.brave.Browser ExternalProtocolDialogShowAlwaysOpenCheckbox -b
 defaults write com.brave.Browser DisablePrintPreview -bool true
 
 #
+# iTerm2
+#
+# https://iterm2.com
+#
+brew install --cask iterm2
+
 # Oh My Zsh
 #
 # https://github.com/ohmyzsh/ohmyzsh
