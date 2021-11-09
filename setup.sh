@@ -60,7 +60,7 @@ brew install duti
 # https://github.com/npm/cli
 #
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash #don't use brew
-nvm install v14.15.1
+nvm install v16.13.0
 npm i -g npm@latest
 
 #
@@ -301,6 +301,24 @@ brew install --cask spotify
 dockutil --add /Applications/Spotify.app --allhomes
 
 #
+# Telegram
+#
+brew install --cask telegram
+dockutil --add /Applications/Telegram.app --allhomes
+
+#
+# TG Pro
+#
+brew install --cask tg-pro
+loginitems -a "TG Pro"
+
+#
+# Vanilla
+#
+brew install --cask vanilla
+loginitems -a "Vanilla"
+
+#
 # Visual Studio Code
 #
 brew install --cask visual-studio-code
@@ -345,19 +363,20 @@ git config --global core.hooksPath ~/.git/hooks
 git config --global advice.addIgnoredFile false
 
 #
+# GitKraken
+#
+# https://www.gitkraken.com/
+#
+brew install --cask gitkraken
+dockutil --add /Applications/GitKraken.app/ --allhomes
+
+#
 # Kitematic
 #
 # https://kitematic.com/
 #
 brew install --cask kitematic
 dockutil --add /Applications/Kitematic.app/ --allhomes
-
-#
-# massCode
-#
-# https://masscode.io/
-#
-brew install --cask masscode
 
 #
 # Postman
@@ -373,13 +392,6 @@ dockutil --add /Applications/Postman.app/ --allhomes
 # https://github.com/prettier/prettier
 #
 brew install prettier
-
-#
-# Sourcetree
-#
-# https://www.sourcetreeapp.com/
-#
-brew install sourcetree
 
 #
 # TablePlus
@@ -455,12 +467,12 @@ loginitems -a "Rectangle"
 brew install --cask signal
 
 #
-# Thunderbird
+# Mailspring
 #
-# https://www.thunderbird.net/en-US/
+# https://getmailspring.com/
 #
-brew install --cask thunderbird
-dockutil --add /Applications/Thunderbird.app/ --allhomes
+brew install --cask mailspring
+dockutil --add /Applications/Mailspring.app/ --allhomes
 
 ##########################
 # Restore configurations #
@@ -523,12 +535,15 @@ duti -s com.brave.Browser com.compuserve.gif all #gif
 ###################
 
 dockutil --move 'Brave Browser' --position end --allhomes
-dockutil --move 'Thunderbird' --position end --allhomes
+dockutil --move 'Mailspring' --position end --allhomes
 dockutil --move 'Slack' --position end --allhomes
+dockutil --move 'Telegram' --position end --allhomes
 dockutil --move 'Visual Studio Code' --position end --allhomes
-dockutil --move 'Postman' --position end --allhomes
-dockutil --move 'Kitematic' --position end --allhomes
 dockutil --move 'iTerm' --position end --allhomes
+dockutil --move 'TablePlus' --position end --allhomes
+dockutil --move 'Kitematic' --position end --allhomes
+dockutil --move 'GitKraken' --position end --allhomes
+dockutil --move 'Postman' --position end --allhomes
 dockutil --move 'Spotify' --position end --allhomes
 
 ###############
@@ -537,10 +552,10 @@ dockutil --move 'Spotify' --position end --allhomes
 #             #
 ###############
 
-dockutil --add '' --type spacer --after 'Thunderbird'
-dockutil --add '' --type spacer --after 'Slack'
+dockutil --add '' --type spacer --after 'Mailspring'
+dockutil --add '' --type spacer --after 'Telegram'
 dockutil --add '' --type spacer --after 'Visual Studio Code'
-dockutil --add '' --type spacer --after 'iTerm'
+dockutil --add '' --type spacer --after 'Postman'
 
 ###############
 #             #
@@ -549,6 +564,14 @@ dockutil --add '' --type spacer --after 'iTerm'
 ###############
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 /bin/mv -f /configs/zsh/{,.}* $HOME
+
+#################
+#               #
+# Symlink Files #
+#               #
+#################
+ln -s ~/.dotfiles/configs/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/configs/.aliases ~/.aliases
 
 #######
 #     #
