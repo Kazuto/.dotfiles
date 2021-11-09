@@ -1,2 +1,18 @@
 alias nah="git stash && git stash drop"
 alias cat='bat --paging=never'
+alias art="php artisan"
+
+comme () {
+  git add --all
+  if (($# > 1))
+  then
+    params=''
+    for i in $*
+    do
+      params=" $params $i"
+    done
+    git commit -m "$params"
+  else
+    git commit -m "$1"
+  fi
+}
