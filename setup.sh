@@ -50,7 +50,7 @@ brew install duti
 # https://github.com/npm/cli
 #
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash #don't use brew
-nvm install v16.13.0
+nvm install v19.8.1
 npm i -g npm@latest
 
 #
