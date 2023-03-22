@@ -407,6 +407,13 @@ brew install prettier
 brew install tableplus
 
 #
+# Supabase CLI
+#
+# https://supabase.com/docs/guides/cli
+#
+brew install supabase/tap/supabase
+
+#
 # Xcode
 #
 mas install 497799835
