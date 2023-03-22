@@ -3,6 +3,10 @@
 export PATH=/usr/local/opt/php@7.4/bin:$PATH
 export PATH=$HOME/.composer/vendor/bin:$PATH
 
+export NVM_DIR="$HOME/.nvm"
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -75,6 +79,7 @@ plugins=(
   git
   npm
   zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
