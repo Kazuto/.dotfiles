@@ -67,9 +67,19 @@ brew install wget
 ###########################
 
 #
-# Sound Control
+# Alfred
 #
-brew install --cask sound-control
+brew install --cask alfred
+
+#
+# Alt-Tab
+#
+brew install --cask alt-tab
+
+#
+# Bartender
+#
+brew install --cask bartender
 
 ########################
 #                      #
