@@ -280,6 +280,13 @@ defaults write com.brave.Browser ExternalProtocolDialogShowAlwaysOpenCheckbox -b
 defaults write com.brave.Browser DisablePrintPreview -bool true
 
 #
+# Commitizen
+#
+# https://commitizen-tools.github.io/commitizen/
+#
+brew install commitizen
+
+#
 # iTerm2
 #
 # https://iterm2.com
