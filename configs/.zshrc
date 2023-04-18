@@ -1,10 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/usr/local/opt/php@7.4/bin:$PATH
-export PATH=$HOME/.composer/vendor/bin:$PATH
+
+[ -d "/usr/local/opt/php@7.4/bin:" ] && export PATH=/usr/local/opt/php@7.4/bin:$PATH
+[ -d "$HOME/.composer/vendor/bin" ] && export PATH=$HOME/.composer/vendor/bin:$PATH
+[ -d "$HOME/.local/bin" ] && export PATH=$HOME/.local/bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
-
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Path to your oh-my-zsh installation.
@@ -109,4 +110,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source $HOME/.aliases
+
+[ -f "$HOME/.aliases" ] && source $HOME/.aliases
