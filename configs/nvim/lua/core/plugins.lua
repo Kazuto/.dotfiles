@@ -24,8 +24,18 @@ local plugins = {
   'tpope/vim-sleuth',
 
   -- Add tree view to vim
-  'nvim-tree/nvim-tree.lua',
+  -- 'nvim-tree/nvim-tree.lua',
   'nvim-tree/nvim-web-devicons',
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    version = "*",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    },
+  },
 
   -- Show recent changes to a file
   'mbbill/undotree',

@@ -1,6 +1,6 @@
 -- vim.keymap.set("n", "<leader>th", vim.cmd("horizontal split term://zsh")
 
-vim.keymap.set("n", "<C-s>", vim.cmd.w, { desc = "[S]ave file" })
+vim.keymap.set("n", "<leader>s", vim.cmd.w, { desc = "[S]ave file" })
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "[Git] [S]tatus"})
 
 
