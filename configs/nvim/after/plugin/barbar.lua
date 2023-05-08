@@ -1,13 +1,18 @@
+local setup, barbar = pcall(require, "barbar")
+if not setup then
+  return
+end
+
 vim.g.barbar_auto_setup = false
 
-require("barbar").setup({
+barbar.setup({
     animation = true,
     auto_hide = false,
     tabpages = true,
     clickable = true,
 
     hide = {
-        extensions = true
+        extensions = false
     },
 
     icons = {

@@ -1,3 +1,8 @@
+local setup, harpoon = pcall(require, "harpoon")
+if not setup then
+  return
+end
+
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 

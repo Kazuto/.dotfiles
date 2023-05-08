@@ -1,4 +1,7 @@
-local cmp = require("cmp")
+local setup, cmp = pcall(require, "cmp")
+if not setup then
+  return
+end
 
 require("luasnip.loaders.from_vscode").lazy_load()
 

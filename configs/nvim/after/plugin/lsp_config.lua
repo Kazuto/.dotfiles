@@ -1,8 +1,23 @@
-local lsp = require("lsp-zero").preset({})
+local setup, lsp = pcall(require, "lsp-zero")
+if not setup then
+  return
+end
+
+lsp.preset({})
 
 lsp.ensure_installed({
+    "emmet_ls",
+    "html",
+    "eslint",
+    "yamlls",
+    "jsonls",
+    "intelephense",
+    "vuels",
+    "lua_ls",
     "tsserver",
-    "eslint"
+    "volar",
+    "docker_compose_language_service",
+    "cssls"
 })
 
 lsp.on_attach(function(client, bufnr)

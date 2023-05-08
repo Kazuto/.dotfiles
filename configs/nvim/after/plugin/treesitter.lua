@@ -1,6 +1,35 @@
-require"nvim-treesitter.configs".setup {
+local setup, treesitter = pcall(require, "nvim-treesitter")
+if not setup then
+  return
+end
+
+local configs = require("nvim-treesitter.configs")
+
+configs.setup({
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
-    ensure_installed = { "php", "javascript", "typescript", "vue", "sql", "css", "c", "lua", "vim", "vimdoc", "query" },
+    ensure_installed = {
+        "bash",
+        "css",
+        "dockerfile",
+        "go",
+        "html",
+        "javascript",
+        "json",
+        "markdown",
+        "php",
+        "python",
+        "scss",
+        "sql",
+        "typescript",
+        "vue",
+        "yaml",
+        -- Default 
+        "c",
+        "lua",
+        "vim",
+        "vimdoc",
+        "query"
+    },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -16,4 +45,4 @@ require"nvim-treesitter.configs".setup {
         enable = true,
         additional_vim_regex_highlighting = false,
     },
-}
+})

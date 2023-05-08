@@ -1,4 +1,10 @@
-require('telescope').setup()
+local setup, telescope = pcall(require, "telescope")
+if not setup then
+  return
+end
+
+telescope.setup()
+
 local builtin = require("telescope.builtin")
 
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles"})
