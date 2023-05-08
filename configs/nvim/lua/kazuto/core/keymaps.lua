@@ -25,9 +25,9 @@ NMAP("<C-e>", ui.toggle_quick_menu, "Open harpoon")
 NMAP("<leader>u", vim.cmd.UndotreeToggle, "[U]ndo Tree")
 
 -- barbar
-NMAP("<Tab>", vim.cmd.BufferNext, "Next Buffer")
-NMAP("<S-Tab>", vim.cmd.BufferPrevious, "Previous Buffer")
-NMAP("<C-w>", vim.cmd.BufferClose, "Close Buffer")
+-- NMAP("<Tab>", vim.cmd.BufferNext, "Next Buffer")
+-- NMAP("<S-Tab>", vim.cmd.BufferPrevious, "Previous Buffer")
+-- NMAP("<C-w>", vim.cmd.BufferClose, "Close Buffer")
 
 -- nvterm
 local terminal = require("nvterm.terminal")

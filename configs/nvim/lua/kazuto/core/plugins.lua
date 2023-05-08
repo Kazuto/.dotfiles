@@ -40,7 +40,7 @@ local plugins = {
   'nvim-lualine/lualine.nvim',
 
   -- Beautify tabs
-  'romgrk/barbar.nvim',
+  -- 'romgrk/barbar.nvim',
 
   -- Show a dashboard when opening vim
   { 'glepnir/dashboard-nvim', event = 'VimEnter' },
@@ -62,6 +62,9 @@ local plugins = {
 
   -- Show definitions etc.
   'preservim/tagbar', -- required ctags
+
+   -- tmux & split window navigation
+  'christoomey/vim-tmux-navigator',
 
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
