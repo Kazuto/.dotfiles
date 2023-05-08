@@ -1,5 +1,5 @@
-local setup, nvterm = pcall(require, "nvterm")
-if not setup then
+local status, nvterm = pcall(require, "nvterm")
+if not status then
   return
 end
 
@@ -29,15 +29,3 @@ nvterm.setup({
     auto_insert = true,
   },
 })
-
-local terminal = require("nvterm.terminal")
-
-local mappings = {
-  { {'n', 't'}, '<A-h>', function () terminal.toggle('horizontal') end },
-  { {'n', 't'}, '<A-v>', function () terminal.toggle('vertical') end },
-}
-local opts = { noremap = true, silent = true }
-
-for _, mapping in ipairs(mappings) do
-  vim.keymap.set(mapping[1], mapping[2], mapping[3], opts)
-end

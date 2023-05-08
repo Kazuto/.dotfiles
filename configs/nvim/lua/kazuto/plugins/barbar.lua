@@ -1,5 +1,5 @@
-local setup, barbar = pcall(require, "barbar")
-if not setup then
+local status, barbar = pcall(require, "barbar")
+if not status then
   return
 end
 
@@ -30,7 +30,3 @@ barbar.setup({
         pinned = { button = "車", filename = true, separator = { right = "" } },
     }
 })
-
-vim.keymap.set("n", "<Tab>", vim.cmd.BufferNext, { desc = "Next Buffer" })
-vim.keymap.set("n", "<S-Tab>", vim.cmd.BufferPrevious, { desc = "Previous Buffer" })
-vim.keymap.set("n", "<leader>x", vim.cmd.BufferClose, { desc = "Close Buffer" })
