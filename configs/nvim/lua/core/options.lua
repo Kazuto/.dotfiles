@@ -1,31 +1,40 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+local opt = vim.opt
 
-vim.opt.nu = true
-vim.opt.relativenumber = true
+-- line numbers
+opt.number = true
+opt.relativenumber = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.shiftround = true
-vim.opt.expandtab = true
+-- tabs & indentation
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
+opt.shiftround = true
+opt.expandtab = true
+opt.autoindent = true
+opt.smartindent = true
 
-vim.opt.smartindent = true
+-- line wrapping
+opt.wrap = false
 
-vim.opt.wrap = false
+-- 
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
 
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
+-- search
+opt.ignorecase = true
+opt.smartcase = true
+opt.hlsearch = false
+opt.incsearch = true
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+-- appearance
+opt.termguicolors = true
+opt.background = "dark"
+opt.signcolumn = "yes"
 
-vim.opt.termguicolors = true
+opt.scrolloff = 8
 
-vim.opt.scrolloff = 8
+opt.updatetime = 50
 
-vim.opt.updatetime = 50
-
-vim.opt.colorcolumn = "80"
+opt.colorcolumn = "80"
