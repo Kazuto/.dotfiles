@@ -590,8 +590,24 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # Symlink Files #
 #               #
 #################
-ln -s ~/.dotfiles/configs/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/configs/.aliases ~/.aliases
+
+path="$(pwd)/configs"
+
+if [ ! -f ~/.zshrc ]; then
+  ln -s $(pwd)/configs/.zshrc ~/.zshrc
+fi
+
+if [ ! -f ~/.aliases ]; then
+  ln -s $(pwd)/configs/.aliases ~/.aliases
+fi
+
+if [ ! -d ~/.config ]; then
+  mkdir -p ~/.config;
+fi
+
+if [ ! -d ~/.config/nvim ]; then
+  ln -s $(pwd)/configs/nvim ~/.config/nvim
+fi
 
 #######
 #     #
