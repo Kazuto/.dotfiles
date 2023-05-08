@@ -1,13 +1,14 @@
 -- vim.keymap.set("n", "<leader>th", vim.cmd("horizontal split term://zsh")
 
-vim.keymap.set("n", "<leader>s", vim.cmd.w, { desc = "[S]ave file" })
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "[Git] [S]tatus"})
+local nmap = function(keys, func, desc)
+  vim.keymap.set('n', keys, func, { desc = desc })
+end
 
 
 -- local mappings = {
 --    { "<C-s>", vim.cmd.w, "[S]ave file" },
 -- }
 
--- for _, map in ipairs(mappings) do
+nmap("<leader>u", vim.cmd.UndotreeToggle, "[U]ndo Tree")
 --     vim.keymap.set("n", map[1], map[2], { desc = map[3] })
 -- end
