@@ -1,4 +1,6 @@
- -- Load plugin manager (lazy)
+require("kazuto.utils")
+
+-- Load plugin manager (lazy)
 require("kazuto.core.plugins")
 
 -- Load vim options, keymaps etc.

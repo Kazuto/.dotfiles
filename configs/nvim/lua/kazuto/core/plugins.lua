@@ -60,6 +60,9 @@ local plugins = {
   -- Quick access to attached files
   'theprimeagen/harpoon',
 
+  -- Show definitions etc.
+  'preservim/tagbar', -- required ctags
+
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   { 'nvim-telescope/telescope.nvim',            version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
