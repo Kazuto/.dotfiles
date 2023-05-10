@@ -2,7 +2,7 @@
 
 # ======== GENERAL ======== #
 alias nah="git stash && git stash drop"
-alias cat='bat --paging=never'
+alias cat="bat --paging=never"
 
 # ======== AUTH ======== #
 alias token="pwgen -s 40 1 | pbcopy && echo 'Copied to clipboard.'"
@@ -64,3 +64,8 @@ function sp:migration(){
 function sp:types() {
   sp gen types typescript --linked --schema public > types/supabase.ts
 }
+
+# ======== VIM & TMUXIFIER ======== #
+alias vim="nvim"
+alias tls="tmuxifier load-session $1"
+alias tms="tmuxifier new-session $1"
