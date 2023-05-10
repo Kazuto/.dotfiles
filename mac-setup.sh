@@ -314,6 +314,20 @@ brew install tmux
 git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
 
 #
+# Yabai
+#
+# https://github.com/koekeishiya/yabai
+#
+brew install koekeishiya/formulae/yabai
+
+#
+# skhd
+#
+# https://github.com/koekeishiya/skhd
+#
+brew install koekeishiya/formulae/skhd
+
+#
 # Slack
 #
 # https://slack.com
