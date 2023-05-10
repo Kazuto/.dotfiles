@@ -314,6 +314,20 @@ brew install tmux
 git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
 
 #
+# Yabai
+#
+# https://github.com/koekeishiya/yabai
+#
+brew install koekeishiya/formulae/yabai
+
+#
+# skhd
+#
+# https://github.com/koekeishiya/skhd
+#
+brew install koekeishiya/formulae/skhd
+
+#
 # Slack
 #
 # https://slack.com
@@ -623,12 +637,32 @@ if [ ! -d ~/.config/nvim ]; then
   ln -s $(pwd)/nvim ~/.config/nvim
 fi
 
+if [ ! -d ~/.config/tmud ]; then
+  mkdir -p ~/.config/tmux;
+fi
+
 if [ ! -f ~/.config/tmux/tmux.conf]; then
   ln -s $(pwd)/tmux/.tmux.conf ~/.config/tmux/tmux.conf
 fi
 
 if [ ! -d ~/.tmuxifier/layouts ]; then
   ln -s $(pwd)/tmux/layouts ~/.tmuxifier/layouts
+fi
+
+if [ ! -d ~/.config/yabai ]; then
+  mkdir -p ~/.config/yabai;
+fi
+
+if [ ! -f ~/.config/yabai/yabairc ]; then
+  ln -s $(pwd)/yabai/yabairc ~/.config/yabai/yabairc
+fi
+
+if [ ! -d ~/.config/skhd ]; then
+  mkdir -p ~/.config/skhd;
+fi
+
+if [ ! -f ~/.config/skhd/skhdrc ]; then
+  ln -s $(pwd)/skhd/skhdrc ~/.config/skhd/skhdrc
 fi
 #######
 #     #

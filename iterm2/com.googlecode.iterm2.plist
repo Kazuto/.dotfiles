@@ -10,10 +10,18 @@
 	<string>vim</string>
 	<key>Default Bookmark Guid</key>
 	<string>6FF4EF3F-3812-40B2-BFBE-1639816878AC</string>
+	<key>DisableFullscreenTransparency</key>
+	<false/>
+	<key>EnableDivisionView</key>
+	<true/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HideMenuBarInFullscreen</key>
-	<true/>
+	<false/>
+	<key>HideScrollbar</key>
+	<false/>
+	<key>HideTabNumber</key>
+	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_E2143C13-4777-408B-B445-12DEDC6205AE</key>
@@ -776,7 +784,7 @@
 			<key>Silence Bell</key>
 			<false/>
 			<key>Space</key>
-			<integer>-1</integer>
+			<integer>0</integer>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -806,11 +814,15 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>15</integer>
+			<integer>0</integer>
 			<key>Working Directory</key>
 			<string>/Users/hillemacher</string>
 		</dict>
 	</array>
+	<key>OpenArrangementAtStartup</key>
+	<false/>
+	<key>OpenNoWindowsAtStartup</key>
+	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
 	<key>PointerActions</key>
@@ -848,20 +860,32 @@
 	</dict>
 	<key>ShowFullScreenTabBar</key>
 	<false/>
+	<key>ShowPaneTitles</key>
+	<true/>
+	<key>SmartPlacement</key>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>StatusBarPosition</key>
+	<integer>0</integer>
 	<key>TabStyleWithAutomaticOption</key>
-	<integer>4</integer>
+	<integer>5</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>TmuxUsesDedicatedProfile</key>
 	<false/>
 	<key>TmuxWarnBeforePausing</key>
 	<false/>
+	<key>UseBorder</key>
+	<false/>
+	<key>UseLionStyleFullscreen</key>
+	<false/>
 	<key>UseTmuxStatusBar</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
+	<key>WindowNumber</key>
+	<true/>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
