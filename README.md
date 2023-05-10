@@ -12,6 +12,6 @@ git clone https://github.com/Kazuto/macSetup.git ~/.dotfiles
 
 2. Run script
 ```zsh
-chmod +x ~/.dotfiles/setup.sh
-~/.dotfiles/setup.sh
+chmod +x ~/.dotfiles/mac-setup.sh
+~/.dotfiles/mac-setup.sh
 ```
