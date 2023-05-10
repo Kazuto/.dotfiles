@@ -300,6 +300,20 @@ brew install --cask iterm2
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 #
+# tmux
+#
+# https://github.com/tmux/tmux
+#
+brew install tmux
+
+#
+# tmuxifier
+#
+# https://github.com/jimeh/tmuxifier
+#
+git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
+
+#
 # Slack
 #
 # https://slack.com
@@ -594,11 +608,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 path="$(pwd)/configs"
 
 if [ ! -f ~/.zshrc ]; then
-  ln -s $(pwd)/configs/.zshrc ~/.zshrc
+  ln -s $(pwd)/zsh/.zshrc ~/.zshrc
 fi
 
 if [ ! -f ~/.aliases ]; then
-  ln -s $(pwd)/configs/.aliases ~/.aliases
+  ln -s $(pwd)/zsh/.aliases ~/.aliases
 fi
 
 if [ ! -d ~/.config ]; then
@@ -606,9 +620,16 @@ if [ ! -d ~/.config ]; then
 fi
 
 if [ ! -d ~/.config/nvim ]; then
-  ln -s $(pwd)/configs/nvim ~/.config/nvim
+  ln -s $(pwd)/nvim ~/.config/nvim
 fi
 
+if [ ! -f ~/.config/tmux/tmux.conf]; then
+  ln -s $(pwd)/tmux/.tmux.conf ~/.config/tmux/tmux.conf
+fi
+
+if [ ! -d ~/.tmuxifier/layouts ]; then
+  ln -s $(pwd)/tmux/layouts ~/.tmuxifier/layouts
+fi
 #######
 #     #
 # END #
