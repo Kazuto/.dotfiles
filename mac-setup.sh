@@ -627,14 +627,12 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM
 #               #
 #################
 
-path="$(pwd)/configs"
-
 if [ ! -f ~/.zshrc ]; then
-  ln -s $(pwd)/zsh/.zshrc ~/.zshrc
+  ln -s "$(pwd)/zsh/.zshrc" "$HOME/.zshrc"
 fi
 
 if [ ! -f ~/.aliases ]; then
-  ln -s $(pwd)/zsh/.aliases ~/.aliases
+  ln -s "$(pwd)/zsh/.aliases" "$HOME/.aliases"
 fi
 
 if [ ! -d ~/.config ]; then
@@ -642,19 +640,19 @@ if [ ! -d ~/.config ]; then
 fi
 
 if [ ! -d ~/.config/nvim ]; then
-  ln -s $(pwd)/nvim ~/.config/nvim
+  ln -s "$(pwd)/nvim" "$HOME/.config/nvim"
 fi
 
 if [ ! -d ~/.config/tmud ]; then
   mkdir -p ~/.config/tmux;
 fi
 
-if [ ! -f ~/.config/tmux/tmux.conf]; then
-  ln -s $(pwd)/tmux/.tmux.conf ~/.config/tmux/tmux.conf
+if [ ! -f ~/.config/tmux/tmux.conf ]; then
+  ln -s "$(pwd)/tmux/.tmux.conf" "$HOME/.config/tmux/tmux.conf"
 fi
 
 if [ ! -d ~/.tmuxifier/layouts ]; then
-  ln -s $(pwd)/tmux/layouts ~/.tmuxifier/layouts
+  ln -s "$(pwd)/tmux/layouts" "$HOME/.tmuxifier/layouts"
 fi
 
 if [ ! -d ~/.config/yabai ]; then
@@ -662,7 +660,7 @@ if [ ! -d ~/.config/yabai ]; then
 fi
 
 if [ ! -f ~/.config/yabai/yabairc ]; then
-  ln -s $(pwd)/yabai/yabairc ~/.config/yabai/yabairc
+  ln -s "$(pwd)/yabai/yabairc" "$HOME/.config/yabai/yabairc"
 fi
 
 if [ ! -d ~/.config/skhd ]; then
@@ -670,8 +668,9 @@ if [ ! -d ~/.config/skhd ]; then
 fi
 
 if [ ! -f ~/.config/skhd/skhdrc ]; then
-  ln -s $(pwd)/skhd/skhdrc ~/.config/skhd/skhdrc
+  ln -s "$(pwd)/skhd/skhdrc" "$HOME/.config/skhd/skhdrc"
 fi
+
 #######
 #     #
 # END #
