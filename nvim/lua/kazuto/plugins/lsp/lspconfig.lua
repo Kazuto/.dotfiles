@@ -47,11 +47,33 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
--- configure html server
-lspconfig["html"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
+local config = {
+  virtual_text = true,
+  update_on_insert = true,
+  underline = true
+}
+
+vim.diagnostic.config(config)
+
+local server = {
+  "cssls",
+  "docker_compose_language_service",
+  "emmet_ls",
+  "eslint",
+  "html",
+  "intelephense",
+  "jsonls",
+  "tailwindcss",
+  "yamlls",
+  "volar",
+}
+
+for _, value in ipairs(server) do  
+  lspconfig[value].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+  })
+end
 
 -- configure typescript server with plugin
 typescript.setup({
@@ -61,38 +83,11 @@ typescript.setup({
   },
 })
 
--- configure css server
-lspconfig["cssls"].setup({
+lspconfig["bashls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
 
--- configure tailwindcss server
-lspconfig["tailwindcss"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
-
--- configure emmet language server
-lspconfig["emmet_ls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-  filetypes = { "html", "css", "sass", "scss", "less", "vue", 'blade' },
-})
-
--- configure php language server
-lspconfig["intelephense"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach
-})
-
--- configure vue3 language server
-lspconfig["volar"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach
-})
-
--- configure lua server (with special settings)
 lspconfig["lua_ls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,

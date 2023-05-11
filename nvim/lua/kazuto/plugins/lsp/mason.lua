@@ -11,18 +11,19 @@ end
 mason.setup()
 
 local lspServers = {
-  "emmet_ls",
-  "html",
-  "eslint",
-  "yamlls",
-  "jsonls",
-  "intelephense",
-  "vuels",
-  "lua_ls",
-  "tsserver",
-  "volar",
+  "bashls",
+  "cssls",
   "docker_compose_language_service",
-  "cssls"
+  "emmet_ls",
+  "eslint",
+  "html",
+  "intelephense",
+  "jsonls",
+  "lua_ls",
+  "tailwindcss",
+  "tsserver",
+  "yamlls",
+  "volar",
 }
 
 mason_lspconfig.setup({
