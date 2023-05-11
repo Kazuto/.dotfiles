@@ -2,7 +2,9 @@
 
 # ======== GENERAL ======== #
 alias nah="git stash && git stash drop"
-alias cat="bat --paging=never"
+
+[ "$(which bat)" != "" ] && alias cat="bat --paging=never"
+[ "$(which colorls)" != "" ] && alias ls="colorls"
 
 # ======== AUTH ======== #
 alias token="pwgen -s 40 1 | pbcopy && echo 'Copied to clipboard.'"
@@ -25,11 +27,16 @@ function pat() {
   art test -d memory_limit=6144M --verbose $args
 }
 
+# PHPStan
+alias psc="phpstan analyse --ansi --memory-limit=8G"
+alias psb="phpstan --generate-baseline --memory-limit=8G"
+
 # ======== COMPOSER ======== #
 alias pix="vendor/bin/pint"
 alias pgb="vendor/bin/phpstan --generate-baseline --memory-limit=4G"
 alias vgp="vendor-patches generate && composer update --lock"
 
+# ======== GIT ======== #
 comme () {
   git add --all
   if (($# > 1))
@@ -45,8 +52,8 @@ comme () {
   fi
 }
 
-git-clean () {
-  git branch --merged upstream/master | xargs git branch -d
+git:clean () {
+  git branch --merged master | xargs git branch -d
 }
 
 # ======== SUPABASE ======== #
@@ -66,6 +73,6 @@ function sp:types() {
 }
 
 # ======== VIM & TMUXIFIER ======== #
-alias vim="nvim"
+[ "$(which nvim)" != "" ] && alias vim="nvim"
 alias tls="tmuxifier load-session $1"
 alias tms="tmuxifier new-session $1"

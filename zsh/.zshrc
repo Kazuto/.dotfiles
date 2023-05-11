@@ -2,6 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 [ -d "/opt/homebrew/bin" ] && export PATH=/opt/homebrew/bin:$PATH
+[ -d "/opt/homebrew/sbin" ] && export PATH=/opt/homebrew/sbin:$PATH
+[ -d "/opt/homebrew/opt/mysql@5.7/bin/" ] && export PATH=/opt/homebrew/opt/mysql@5.7/bin:$PATH
 [ -d "/usr/local/opt/php@7.4/bin" ] && export PATH=/usr/local/opt/php@7.4/bin:$PATH
 [ -d "$HOME/.composer/vendor/bin" ] && export PATH=$HOME/.composer/vendor/bin:$PATH
 [ -d "$HOME/.local/bin" ] && export PATH=$HOME/.local/bin:$PATH
@@ -117,3 +119,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f "$HOME/.aliases" ] && source $HOME/.aliases
+[ -f "$HOME/.after" ] && source $HOME/.after

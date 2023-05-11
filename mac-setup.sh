@@ -471,6 +471,13 @@ npm i -g nodemon
 #
 brew install bat
 
+#
+# Color LS
+#
+# https://github.com/athityakumar/colorls
+#
+gem install colorls
+
 ################
 #              #
 # Applications #
@@ -610,8 +617,9 @@ dockutil --add '' --type spacer --after 'Postman'
 # Zsh Plugins #
 #             #
 ###############
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-/bin/mv -f /configs/zsh/{,.}* $HOME
+
+git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
 
 #################
 #               #
