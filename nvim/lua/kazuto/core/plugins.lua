@@ -27,6 +27,7 @@ local plugins = {
   'tpope/vim-rhubarb',
   'lewis6991/gitsigns.nvim',
 
+  'm4xshen/autoclose.nvim',
   -- ====== APPEARANCE ======
 
   -- Vim Theme
