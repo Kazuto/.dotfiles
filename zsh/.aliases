@@ -5,6 +5,22 @@ alias nah="git stash && git stash drop"
 
 [ "$(which bat)" != "" ] && alias cat="bat --paging=never"
 [ "$(which colorls)" != "" ] && alias ls="colorls"
+[ "$(which trash)" != "" ] && alias rm="trash"
+
+# clearing terminal
+alias c="clear"
+
+# sourcing shell config
+alias s="source ~/.zshrc"
+
+# file listing
+alias l="ls -lah"
+
+# create directory and move to it
+function to {
+  mkdir -p "$1"
+  cd "$1" || true
+}
 
 # ======== AUTH ======== #
 alias token="pwgen -s 40 1 | pbcopy && echo 'Copied to clipboard.'"
@@ -13,7 +29,11 @@ alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | tr -d '\n' | pbcopy && echo '
 
 # ======== ARTISAN ======== #
 alias art="php artisan"
-alias amm="art make:migration $1"
+
+function amm {
+  art make:migration "$1"
+}
+
 alias acc="art cache:clear && php artisan config:clear"
 alias aql="art queue:listen --timeout=600 --tries=3 --queue=default --env=local"
 alias aqc="art queue:clear --queue=default --env=local"
@@ -24,7 +44,7 @@ function pat() {
   else args="--filter=$1"
   fi
 
-  art test -d memory_limit=6144M --verbose $args
+  art test -d memory_limit=6144M --verbose "$args"
 }
 
 # PHPStan
@@ -42,7 +62,7 @@ comme () {
   if (($# > 1))
   then
     params=''
-    for i in $*
+    for i in "$@"
     do
       params=" $params $i"
     done
@@ -64,7 +84,7 @@ alias sp:stop="sp stop"
 function sp:migration(){
   if [ $# -eq 0 ]
   then echo "Provide a migration name"
-  else sp db diff --use-migra $1 -f $1
+  else sp db diff --use-migra "$1" -f "$1"
   fi
 }
 
@@ -74,5 +94,10 @@ function sp:types() {
 
 # ======== VIM & TMUXIFIER ======== #
 [ "$(which nvim)" != "" ] && alias vim="nvim"
-alias tls="tmuxifier load-session $1"
-alias tms="tmuxifier new-session $1"
+function tls {
+  tmuxifier load-session "$1"
+}
+
+function tms {
+  tmuxifier new-session "$1"
+}
