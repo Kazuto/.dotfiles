@@ -67,9 +67,9 @@ brew install wget
 ###########################
 
 #
-# Alfred
+# Raycast
 #
-brew install --cask alfred
+brew install raycast
 
 #
 # Alt-Tab
