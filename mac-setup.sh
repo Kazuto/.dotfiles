@@ -81,6 +81,11 @@ brew install --cask alt-tab
 #
 brew install --cask bartender
 
+#
+# Karabiner
+#
+brew install karabiner-elements
+
 ########################
 #                      #
 # Applications Cleanup #
