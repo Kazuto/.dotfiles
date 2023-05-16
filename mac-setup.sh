@@ -483,6 +483,11 @@ brew install bat
 #
 gem install colorls
 
+#
+# Trash
+#
+brew install trash
+
 ################
 #              #
 # Applications #
