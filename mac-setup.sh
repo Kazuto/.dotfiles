@@ -305,27 +305,6 @@ brew install --cask iterm2
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 #
-# tmux
-#
-# https://github.com/tmux/tmux
-#
-brew install tmux
-
-#
-# tmuxifier
-#
-# https://github.com/jimeh/tmuxifier
-#
-git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
-
-#
-# Yabai
-#
-# https://github.com/koekeishiya/yabai
-#
-brew install koekeishiya/formulae/yabai
-
-#
 # skhd
 #
 # https://github.com/koekeishiya/skhd
@@ -359,6 +338,20 @@ brew install --cask tg-pro
 loginitems -a "TG Pro"
 
 #
+# tmux
+#
+# https://github.com/tmux/tmux
+#
+brew install tmux
+
+#
+# tmuxifier
+#
+# https://github.com/jimeh/tmuxifier
+#
+git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
+
+#
 # Vanilla
 #
 brew install --cask vanilla
@@ -369,6 +362,13 @@ loginitems -a "Vanilla"
 #
 brew install --cask visual-studio-code
 dockutil --add /Applications/Visual\ Studio\ Code.app/ --allhomes
+
+#
+# Yabai
+#
+# https://github.com/koekeishiya/yabai
+#
+brew install koekeishiya/formulae/yabai
 
 ###################
 #                 #
@@ -571,8 +571,6 @@ brew install --cask font-roboto-condensed
 # mdls -name kMDItemContentTypeTree ~/init.lua   #
 #                                                #
 ##################################################
-
-
 
 duti -s com.microsoft.VSCode public.plain-text all #txt
 duti -s com.microsoft.VSCode dyn.ah62d4rv4ge8027pb all #lua
