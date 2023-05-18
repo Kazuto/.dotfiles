@@ -38,6 +38,15 @@ alias acc="art cache:clear && php artisan config:clear"
 alias aql="art queue:listen --timeout=600 --tries=3 --queue=default --env=local"
 alias aqc="art queue:clear --queue=default --env=local"
 
+function ac {
+  art config:clear
+  art cache:clear
+  art event:clear
+  art queue:clear
+  art view:clear
+  art route:clear
+}
+
 function pat() {
   if [ $# -eq 0 ] 
   then args="--testdox"
