@@ -15,6 +15,12 @@ barbar.setup({
         extensions = false
     },
 
+    buffer_index = false,
+    buffer_number = false,
+
+    maximum_padding = 2,
+
+
     icons = {
         buffer_index = true,
         button = "",
@@ -24,9 +30,20 @@ barbar.setup({
             enabled = true,
         },
 
+        gitsigns = {
+            added = {enabled = true, icon = '+'},
+            changed = {enabled = true, icon = '~'},
+            deleted = {enabled = true, icon = '-'},
+        },
+
         separator = { left = "▎", right = "" },
 
         modified = { button = "●" },
         pinned = { button = "車", filename = true, separator = { right = "" } },
+    },
+
+    sidebar_filetypes = {
+        NvimTree = true,
+        undotree = true,
     }
 })

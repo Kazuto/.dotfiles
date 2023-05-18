@@ -41,7 +41,7 @@ local plugins = {
   'nvim-lualine/lualine.nvim',
 
   -- Beautify tabs
-  -- 'romgrk/barbar.nvim',
+  'romgrk/barbar.nvim',
 
   -- Show a dashboard when opening vim
   { 'glepnir/dashboard-nvim', event = 'VimEnter' },
@@ -104,7 +104,8 @@ local plugins = {
   'hrsh7th/cmp-nvim-lsp',
   { 'glepnir/lspsaga.nvim', branch = "main" },
   'jose-elias-alvarez/typescript.nvim',
-  'onsails/lspkind.nvim'
+  'onsails/lspkind.nvim',
+  'jose-elias-alvarez/null-ls.nvim'
 }
 
 local opts = {}
