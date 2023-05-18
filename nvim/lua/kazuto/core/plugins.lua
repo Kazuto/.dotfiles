@@ -27,7 +27,7 @@ local plugins = {
   'tpope/vim-rhubarb',
   'lewis6991/gitsigns.nvim',
 
-  'm4xshen/autoclose.nvim',
+  'windwp/nvim-autopairs',
   -- ====== APPEARANCE ======
 
   -- Vim Theme
@@ -90,7 +90,7 @@ local plugins = {
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
 
-  -- Snipptes
+  -- Snippets
   'L3MON4D3/LuaSnip',
   'saadparwaiz1/cmp_luasnip',
   'rafamadriz/friendly-snippets',
