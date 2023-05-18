@@ -1,4 +1,12 @@
 #!/bin/bash
+
+#
+# Inspiration taken from Andrew Burgess
+# https://github.com/andrew8088
+#
+# See: https://github.com/andrew8088/dotfiles/blob/742d9cf7d6d9b1334b2820228f7bd2a758af9367/install/bootstrap.sh
+#
+
 COLOR="#C084FC"
 
 DIR="$(dirname "$(pwd -P)")"
@@ -104,7 +112,9 @@ create_symlink () {
 }
 
 setup () {
-  local overwrite_all=false backup_all=false skip_all=false
+  local overwrite_all=false
+  local backup_all=false
+  local skip_all=false
 
   echo "$FILES" | while read -r file
   do
