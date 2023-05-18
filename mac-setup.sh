@@ -629,62 +629,11 @@ dockutil --add '' --type spacer --after 'Postman'
 git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
 
-#################
-#               #
-# Symlink Files #
-#               #
-#################
-
-if [ ! -f ~/.zshrc ]; then
-  ln -s "$(pwd)/zsh/.zshrc" "$HOME/.zshrc"
-fi
-
-if [ ! -f ~/.aliases ]; then
-  ln -s "$(pwd)/zsh/.aliases" "$HOME/.aliases"
-fi
-
-if [ ! -d ~/.config ]; then
-  mkdir -p ~/.config;
-fi
-
-if [ ! -d ~/.config/nvim ]; then
-  ln -s "$(pwd)/nvim" "$HOME/.config/nvim"
-fi
-
-if [ ! -d ~/.config/tmud ]; then
-  mkdir -p ~/.config/tmux;
-fi
-
-if [ ! -f ~/.config/tmux/tmux.conf ]; then
-  ln -s "$(pwd)/tmux/.tmux.conf" "$HOME/.config/tmux/tmux.conf"
-fi
-
-if [ ! -d ~/.tmuxifier/layouts ]; then
-  ln -s "$(pwd)/tmux/layouts" "$HOME/.tmuxifier/layouts"
-fi
-
-if [ ! -d ~/.config/yabai ]; then
-  mkdir -p ~/.config/yabai;
-fi
-
-if [ ! -f ~/.config/yabai/yabairc ]; then
-  ln -s "$(pwd)/yabai/yabairc" "$HOME/.config/yabai/yabairc"
-fi
-
-if [ ! -d ~/.config/skhd ]; then
-  mkdir -p ~/.config/skhd;
-fi
-
-if [ ! -f ~/.config/skhd/skhdrc ]; then
-  ln -s "$(pwd)/skhd/skhdrc" "$HOME/.config/skhd/skhdrc"
-fi
-
 #######
 #     #
 # END #
 #     #
 #######
-
 
 mackup backup --force
 
