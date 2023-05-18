@@ -41,7 +41,6 @@ link () {
 
   if [ -f "$dst" ] || [ -d "$dst" ] || [ -L "$dst" ]
   then
-
     if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]
     then
       choose_method
@@ -73,7 +72,7 @@ link () {
   then
     ln -s "$1" "$2"
 
-    return
+    success "Linked $1 to $2"
   fi
 }
 
@@ -116,13 +115,15 @@ setup () {
   local backup_all=false
   local skip_all=false
 
-  echo "$FILES" | while read -r file
+  echo -e "$FILES" | while read -r file
   do
-    cat < "$file" | while read -r line
+    while read -r line
     do
       create_symlink "$line"
-    done
+    done < "$file"
   done
 }
 
 setup
+
+success "All installed 👍"

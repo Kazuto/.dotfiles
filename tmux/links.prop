@@ -1,2 +1,2 @@
 $DIR/tmux/tmux.conf:$HOME/.config/tmux/tmux.conf
-$DIR/tmux/layouts:$HOME/.tmuxifier/layouts
+$DIR/tmux/layouts:$HOME/.tmuxifier
