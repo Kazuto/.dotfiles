@@ -1,3 +1,4 @@
+-- Load global helper functions etc.
 require("kazuto.utils")
 
 -- Load plugin manager (lazy)
