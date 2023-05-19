@@ -477,11 +477,11 @@ npm i -g nodemon
 brew install bat
 
 #
-# Color LS
+# Exa
 #
-# https://github.com/athityakumar/colorls
+# https://the.exa.website/
 #
-gem install colorls
+brew install exa
 
 #
 # Trash

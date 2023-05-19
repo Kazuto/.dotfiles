@@ -4,7 +4,7 @@
 alias nah="git stash && git stash drop"
 
 [ "$(which bat)" != "" ] && alias cat="bat --paging=never"
-[ "$(which colorls)" != "" ] && alias ls="colorls"
+[ "$(which exa)" != "" ] && alias ls="exa --icons $@"
 [ "$(which trash)" != "" ] && alias rm="trash"
 
 # clearing terminal
