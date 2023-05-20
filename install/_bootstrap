@@ -1,5 +1,3 @@
-#!/bin/bash
-
 #
 # Inspiration taken from Andrew Burgess
 # https://github.com/andrew8088
@@ -7,29 +5,13 @@
 # See: https://github.com/andrew8088/dotfiles/blob/742d9cf7d6d9b1334b2820228f7bd2a758af9367/install/bootstrap.sh
 #
 
-COLOR="#C084FC"
+info "Creating symlinks for config files." --margin="1"
 
 DIR="$(dirname "$(pwd -P)")"
 PROP="links.prop"
 FILES="$(find -H "$DIR" -maxdepth 2 -name "$PROP" -not -path '*.git*')"
 
 set -e
-
-gum style \
-  --border rounded \
-  --padding "1" \
-  --margin "1" \
-  --border-foreground $COLOR \
-  --foreground $COLOR \
-  "Dotfile Setup"
-
-success () {
-  gum style --foreground "#84CC16" " $1"
-}
-
-warning () {
-  gum style --foreground "#FB923C" " $1"
-}
 
 link () {
   local src="$1"
@@ -110,7 +92,7 @@ create_symlink () {
   link "$src" "$dst"
 }
 
-setup () {
+function setup () {
   local overwrite_all=false
   local backup_all=false
   local skip_all=false
