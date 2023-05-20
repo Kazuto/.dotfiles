@@ -1,18 +1,18 @@
 local status, lspsaga = pcall(require, "lspsaga")
 if not status then
-  return
+	return
 end
 
 lspsaga.setup({
-  -- keybinds for navigation in lspsaga window
-  scroll_preview = { scroll_down = "<C-f>", scroll_up = "<C-b>" },
-  -- use enter to open file with definition preview
-  definition = {
-    edit = "<CR>",
-  },
-  ui = {
-    colors = {
-      normal_bg = "#022746",
-    },
-  },
+	-- keybinds for navigation in lspsaga window
+	scroll_preview = { scroll_down = "<C-f>", scroll_up = "<C-b>" },
+	-- use enter to open file with definition preview
+	definition = {
+		edit = "<CR>",
+	},
+	ui = {
+		colors = {
+			normal_bg = "#022746",
+		},
+	},
 })

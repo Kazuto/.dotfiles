@@ -1,6 +1,6 @@
 local status, dashboard = pcall(require, "dashboard")
 if not status then
-  return
+	return
 end
 
 dashboard.setup()

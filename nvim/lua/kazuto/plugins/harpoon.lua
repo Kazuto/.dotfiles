@@ -1,6 +1,6 @@
 local status, harpoon = pcall(require, "harpoon")
 if not status then
-  return
+	return
 end
 
 harpoon.setup()

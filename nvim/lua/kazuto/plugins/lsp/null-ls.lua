@@ -19,6 +19,6 @@ null_ls.setup({
 		formatting.stylua,
 		formatting.pint,
 		diagnostics.shellcheck,
-		code_actions.shellcheck
+		code_actions.shellcheck,
 	},
 })
