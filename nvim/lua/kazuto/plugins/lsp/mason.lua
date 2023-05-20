@@ -10,22 +10,7 @@ end
 
 mason.setup()
 
-local lspServers = {
-  "bashls",
-  "cssls",
-  "docker_compose_language_service",
-  "emmet_ls",
-  "eslint",
-  "html",
-  "intelephense",
-  "jsonls",
-  "lua_ls",
-  "tailwindcss",
-  "tsserver",
-  "yamlls",
-  "volar",
-}
-
 mason_lspconfig.setup({
-  ensure_installed = lspServers
+  ensure_installed = Servers,
+  automatic_installation = true,
 })
