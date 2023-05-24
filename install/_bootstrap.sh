@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #
 # Inspiration taken from Andrew Burgess
 # https://github.com/andrew8088

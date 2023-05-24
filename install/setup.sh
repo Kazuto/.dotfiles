@@ -14,7 +14,6 @@ gum style \
   --foreground $COLOR \
   "Dotfile setup script v1.0.0"
 
-
 if ! [ -f ~/.ssh/id_rsa ]
 then
   info "Generating SSH keys" --margin="1 0"
@@ -27,11 +26,9 @@ fi
 
 OS=$(gum choose --header "Please choose your operating system" "macOS" "Linux")
 
-if [ "$OS" == "macOS" ]
-then
-  . "$PWD/_macos.sh"
-fi
+# if [ "$OS" == "macOS" ]
+# then
+#   . "$PWD/_macos.sh"
+# fi
 
-# source "$PWD/_bootstrap.sh"
-
-
+source "$PWD/_bootstrap.sh"

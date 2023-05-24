@@ -24,13 +24,13 @@ done
 }
 
 install_deps "Install main applications" \
-  "git" "commitizen" "iterm2" "neovim" "tmux"
+  "alacritty" "git" "commitizen" "iterm2" "neovim" "tmux"
 
 install_deps "Installing CLI tools" \
   "bat" "exa" "supabase/tap/supabase" "trash" "wget"
 
 install_deps "Installing code style tools" \
-  "eslint" "phpstan" "prettier"
+  "eslint" "phpstan" "prettier" "codespell"
 
 install_deps "Installing utility applications" \
   "alt-tab" "bartender" "dockutil" "duti" \
