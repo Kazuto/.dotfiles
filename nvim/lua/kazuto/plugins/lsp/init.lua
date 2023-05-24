@@ -1,7 +1,7 @@
 Servers = {
 	"bashls",
 	"cssls",
-	"docker_compose_language_service",
+	-- "docker_compose_language_service",
 	"emmet_ls",
 	"eslint",
 	"html",
@@ -10,7 +10,7 @@ Servers = {
 	"lua_ls",
 	"tailwindcss",
 	"tsserver",
-	"yamlls",
+	-- "yamlls",
 	"volar",
 }
 

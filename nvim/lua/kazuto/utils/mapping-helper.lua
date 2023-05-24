@@ -6,6 +6,10 @@ function NMAP(bind, exec, desc)
 	map("n", bind, exec, desc)
 end
 
+function IMAP(bind, exec, desc)
+	map("i", bind, exec, desc)
+end
+
 function TNMAP(bind, exec, desc)
 	map({ "t", "n" }, bind, exec, desc)
 end
