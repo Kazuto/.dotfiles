@@ -5,6 +5,8 @@
 [ "$(which exa)" != "" ] && alias ls="exa --icons $@"
 [ "$(which trash)" != "" ] && alias rm="trash"
 
+alias dotfiles="cd ~/.dotfiles && vim ."
+
 # clearing terminal
 alias c="clear"
 
