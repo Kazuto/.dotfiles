@@ -1,14 +1,13 @@
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 NMAP("<leader>gs", vim.cmd.Git, "[Git] [S]tatus")
 
 -- split windows
-NMAP("<leader>sv", "<C-w>v", "[S]plit window [V]ertical")
-NMAP("<leader>sh", "<C-w>s", "[S]plit window [H]orizontal")
-NMAP("<leader>se", "<C-w>=", "[S]plit window [E]qual")
-NMAP("<leader>sx", ":close<CR>", "[S]plit window E[x]it")
+-- NMAP("<leader>sv", "<C-w>v", "[S]plit window [V]ertical")
+-- NMAP("<leader>sh", "<C-w>s", "[S]plit window [H]orizontal")
+-- NMAP("<leader>se", "<C-w>=", "[S]plit window [E]qual")
+-- NMAP("<leader>sx", ":close<CR>", "[S]plit window E[x]it")
 
 -- nvim-tree
 NMAP("<C-b>", vim.cmd.NvimTreeToggle, "Toggle Nvim Tree")
@@ -26,13 +25,17 @@ NMAP("<leader>u", vim.cmd.UndotreeToggle, "[U]ndo Tree")
 -- barbar
 NMAP("<Tab>", vim.cmd.BufferNext, "Next Buffer")
 NMAP("<S-Tab>", vim.cmd.BufferPrevious, "Previous Buffer")
-NMAP("C-w>", vim.cmd.BufferClose, "Close Buffer")
+NMAP("<C-x>", vim.cmd.BufferClose, "Close Buffer")
 
 -- nvterm
 local terminal = require("nvterm.terminal")
 
-TNMAP('<leader>th', function() terminal.toggle('horizontal') end, "[T]erminal [H]orizontal")
-TNMAP('<leader>tv', function() terminal.toggle('vertical') end, "[T]erminal [V]ertical")
+TNMAP("<leader>th", function()
+	terminal.toggle("horizontal")
+end, "[T]erminal [H]orizontal")
+TNMAP("<leader>tv", function()
+	terminal.toggle("vertical")
+end, "[T]erminal [V]ertical")
 
 -- telescope
 NMAP("<leader>ff", ":Telescope find_files<CR>", "[F]ind [F]iles")
@@ -45,3 +48,27 @@ NMAP("<leader>fh", ":Telescope help_tags<CR>", "[F]ind [H]elp")
 NMAP("<C-Return>", ":TagbarToggle<CR>")
 
 NMAP("<C-s>", vim.cmd.w, "[S]ave file")
+
+-- Codium
+-- IMAP("<c-;", "<CMD>call codeium#CycleCompletions(1)<CR>" , "[C]odium")
+-- IMAP("<c-,", "<CMD>call codeium#CycleCompletions(-1)<CR>" , "[C]odium")
+--
+-- IMAP('<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+-- IMAP('<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+-- IMAP('<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+-- IMAP('<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
+
+vim.g.codeium_disable_bindings = 1
+
+vim.keymap.set("i", "<C-CR>", function()
+	return vim.fn["codeium#Accept"]()
+end, { expr = true, noremap = true })
+vim.keymap.set("i", "<C-;>", function()
+	return vim.fn["codeium#CycleCompletions"](1)
+end, { expr = true, noremap = true })
+vim.keymap.set("i", "<C-,>", function()
+	return vim.fn["codeium#CycleCompletions"](-1)
+end, { expr = true, noremap = true })
+vim.keymap.set("i", "<C-x>", function()
+	return vim.fn["codeium#Clear"]()
+end, { expr = true, noremap = true })
