@@ -28,6 +28,7 @@ local plugins = {
 	"lewis6991/gitsigns.nvim",
 
 	"windwp/nvim-autopairs",
+	"RRethy/vim-illuminate",
 
 	-- ====== APPEARANCE ======
 
