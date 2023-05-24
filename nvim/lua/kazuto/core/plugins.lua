@@ -106,6 +106,8 @@ local plugins = {
 	"jose-elias-alvarez/typescript.nvim",
 	"onsails/lspkind.nvim",
 	"jose-elias-alvarez/null-ls.nvim",
+
+	"Exafunction/codeium.vim",
 }
 
 local opts = {}
