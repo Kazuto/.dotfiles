@@ -11,15 +11,15 @@
 
 window#waybar {
   background: rgba(21, 18, 27, 0);
-  color: @text;
+  color: #CDD6F4;
 }
 
 tooltip {
-  background: @base;
+  background: #1E1E2E;
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
-  border-color: @crust;
+  border-color: #11111B;
 }
 
 #clock,
@@ -32,14 +32,14 @@ tooltip {
 #cpu,
 #memory,
 #network {
-  background: @base;
+  background: #1E1E2E;
   padding: 0px 10px;
   margin: 3px 0px;
   margin-top: 10px;
 }
 
 #workspaces {
-  background: @base;
+  background: #1E1E2E;
   border-radius: 10px;
   margin-left: 10px;
   padding-right: 0px;
@@ -48,38 +48,37 @@ tooltip {
 
 #workspaces button {
   box-shadow: unset;
+  border: unset;
 
   padding: 5px;
-  color: @surface0;
+  color: #313244;
   margin-right: 5px;
-  border: none;
 }
 
 #workspaces button.active {
-  color: @subtext0;
+  color: #A6ADC8;
 }
 
 #workspaces button.focused {
-  color: @subtext0;
-  background: @maroon;
+  color: #A6ADC8;
   border-radius: 10px;
   outline: none;
 }
 
 #workspaces button.urgent {
-  color: @crust;
-  background: #a6e3a1;
+  color: #F38BA8;
+  background: none;
   border-radius: 10px;
 }
 
 #workspaces button:hover {
-  background: @crust;
+  background: #11111B;
   color: #cdd6f4;
   border-radius: 10px;
 }
 
 #clock {
-  color: @peach;
+  color: #FAB387;
   border-radius: 10px;
   margin-left: 5px;
 }
@@ -91,7 +90,7 @@ tooltip {
 #custom-spotify {
   border-radius: 10px;
   margin-right: 10px;
-  color: @green;
+  color: #A6E3A1;
 }
 
 #tray {
@@ -101,32 +100,32 @@ tooltip {
 
 #cpu {
   border-radius: 10px 0px 0px 10px;
-  color: @sky;
+  color: #89DCEB;
 }
 
 #memory {
-  color: @sapphire;
+  color: #74C7EC;
 }
 
 #network {
   border-radius: 0px 10px 10px 0px;
   margin-right: 10px;
-  color: @blue;
+  color: #89B4FA;
 }
 
 #custom-updates {
-  color: @pink;
+  color: #F5C2E7;
   border-radius: 10px 0px 0px 10px;
 }
 
 #pulseaudio {
-  color: @mauve;
+  color: #CBA6F7;
   border-radius: 0px 10px 10px 0px;
   margin-right: 5px;
 }
 
 #pulseaudio.microphone {
-  color: @mauve;
+  color: #CBA6F7;
   border-radius: 0px 10px 10px 0px;
   margin-right: 5px;
 }
