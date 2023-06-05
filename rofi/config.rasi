@@ -3,6 +3,8 @@
 configuration {
   display-drun: "Apps";
   display-window: "Windows";
+  display-emoji: "Emojis";
+  drun-display-format: "{icon} {name}";
 
   show-icons: true;
   icon-theme: "Papirus";
