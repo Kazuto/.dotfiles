@@ -1,14 +1,15 @@
 /** Basic config file **/
 
 configuration {
+  display-drun: "Apps";
+  display-window: "Windows";
+
   show-icons: true;
   icon-theme: "Papirus";
-  /** display-drun: "";
-  display-window: "﩯 "; **/
-  display-combi: "  ";
 }
 
-//@theme "themes/catppuccin-mocha.rasi"
-//@theme "/home/kazuto/.config/rofi/themes/catppuccin-mocha.rasi"
-//@theme "/usr/share/rofi/themes/Adapta-Nokto.rasi"
 @theme "/home/kazuto/.config/rofi/themes/catppuccin-mocha.rasi"
+
+* {
+  font: "JetBrainsMono Nerd Font 12";
+}
