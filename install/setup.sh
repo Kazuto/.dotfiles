@@ -14,12 +14,12 @@ gum style \
   --foreground $COLOR \
   "Dotfile setup script v1.0.0"
 
-if ! [ -f ~/.ssh/id_rsa ]
+if ! [ -f ~/.ssh/id_ed25519 ]
 then
   info "Generating SSH keys" --margin="1 0"
 
-  ssh-keygen -t rsa -b 4096 -C $email
-  ssh-add -K ~/.ssh/id_rsa
+  ssh-keygen -t ed25519 -C $email
+  ssh-add -K ~/.ssh/id_ed25519
   ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
   ssh-keyscan -t rsa github.lab >> ~/.ssh/known_hosts
 fi
