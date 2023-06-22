@@ -16,6 +16,7 @@ configs.setup({
 		"javascript",
 		"json",
 		"markdown",
+		"markdown_inline",
 		"php",
 		"python",
 		"scss",
