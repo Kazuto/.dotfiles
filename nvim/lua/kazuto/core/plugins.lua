@@ -26,6 +26,14 @@ local plugins = {
 	"tpope/vim-repeat",
 	"tpope/vim-surround",
 	"tpope/vim-sleuth",
+
+	{
+		"tommcdo/vim-lion",
+		config = function()
+			require("kazuto.plugins.lion")
+		end,
+	},
+
 	{
 		"lewis6991/gitsigns.nvim",
 		dependencies = {
