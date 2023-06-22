@@ -8,9 +8,11 @@ if not mason_lspconfig_status then
 	return
 end
 
+local servers = require('kazuto.plugins.lsp.servers')
+
 mason.setup()
 
 mason_lspconfig.setup({
-	ensure_installed = Servers,
+	ensure_installed = servers,
 	automatic_installation = true,
 })

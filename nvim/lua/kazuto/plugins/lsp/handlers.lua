@@ -8,7 +8,12 @@ end
 M.capabilities = cmp_nvim_lsp.default_capabilities()
 
 M.setup = function()
-	local signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = " " }
+	local signs = {
+		Error = " ",
+		Warn = " ",
+		Hint = "ﴞ ",
+		Info = " ",
+	}
 
 	for type, icon in pairs(signs) do
 		local hl = "DiagnosticSign" .. type
@@ -32,12 +37,15 @@ local function keymaps(client, bufnr)
 
 	map("gf", "<cmd>Lspsaga lsp_finder<CR>", "Show definition, references")
 	map("gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", "[G]o [D]eclaration")
-	map("gd", "<cmd>Lspsaga peek_definition<CR>", "[G] [d]efinition")
-	map("gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", "[G]o [I]mplementation")
+	map("gd", "<cmd>Lspsaga peek_definition<CR>", "[G]o [d]efinition")
+	map("gi", ":Telescope lsp_implementations<CR>", "[G]o [I]mplementation")
+	map("gr", ":Telescope lsp_references<CR>", "[G]o [R]eferences")
+
 	map("<leader>ca", "<cmd>Lspsaga code_action<CR>", "[C]ode [A]ctions")
 	map("<leader>rn", "<cmd>Lspsaga rename<CR>", "[R]ename")
 	map("<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", "[D]iagnostics for line")
 	map("<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", "[D]iagnostics for cursor")
+
 	map("[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Previous diagnostic in buffer")
 	map("]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", "Next diagnostic in buffer")
 	map("K", "<cmd>Lspsaga hover_doc<CR>", "Documentation cursor")
