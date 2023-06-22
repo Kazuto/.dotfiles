@@ -27,16 +27,6 @@ NMAP("<Tab>", vim.cmd.BufferNext, "Next Buffer")
 NMAP("<S-Tab>", vim.cmd.BufferPrevious, "Previous Buffer")
 NMAP("<C-x>", vim.cmd.BufferClose, "Close Buffer")
 
--- nvterm
-local terminal = require("nvterm.terminal")
-
-TNMAP("<leader>th", function()
-	terminal.toggle("horizontal")
-end, "[T]erminal [H]orizontal")
-TNMAP("<leader>tv", function()
-	terminal.toggle("vertical")
-end, "[T]erminal [V]ertical")
-
 -- telescope
 NMAP("<leader>ff", ":Telescope find_files<CR>", "[F]ind [F]iles")
 NMAP("<leader>fs", ":Telescope live_grep<CR>", "[F]ind [W]ord")

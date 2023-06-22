@@ -201,12 +201,11 @@ local plugins = {
 
 	-- Add terminals
 	{
-		"NvChad/nvterm",
+		"akinsho/toggleterm.nvim",
 		config = function()
-			require("kazuto.plugins.nvterm")
+			require("kazuto.plugins.toggleterm")
 		end,
 	},
-	-- "akinsho/toggleterm.nvim"
 
 	-- ====== LSP =====
 
