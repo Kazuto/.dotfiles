@@ -65,6 +65,8 @@ shift + alt - g : yabai -m window --display east; yabai -m display --focus east;
 # shift + alt - 6 : yabai -m window --space 6;
 # shift + alt - 7 : yabai -m window --space 7;
 
+cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+
 # -- Starting/Stopping/Restarting Yabai --
 
 # stop/start/restart yabai
