@@ -134,6 +134,13 @@ local plugins = {
 		end,
 	},
 
+	{
+		"AndrewRadev/splitjoin.vim",
+		config = function()
+			require("kazuto.plugins.splitjoin")
+		end,
+	},
+
 	-- Quick access to attached files
 	{
 		"theprimeagen/harpoon",
