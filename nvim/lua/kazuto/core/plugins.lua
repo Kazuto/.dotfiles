@@ -35,6 +35,13 @@ local plugins = {
 	},
 
 	{
+		"sickill/vim-pasta",
+		config = function()
+			require("kazuto.plugins.pasta")
+		end,
+	},
+
+	{
 		"lewis6991/gitsigns.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
