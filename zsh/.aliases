@@ -1,8 +1,6 @@
 #!/bin/bash
 
 # ======== GENERAL ======== #
-alias nah="git stash && git stash drop"
-
 [ "$(which bat)" != "" ] && alias cat="bat --paging=never"
 [ "$(which exa)" != "" ] && alias ls="exa --icons $@"
 [ "$(which trash)" != "" ] && alias rm="trash"
@@ -35,7 +33,7 @@ function amm {
 }
 
 alias acc="art cache:clear && php artisan config:clear"
-alias aql="art queue:listen --timeout=600 --tries=3 --queue=default --env=local"
+alias aql="art queue:work --timeout=600 --tries=3 --queue=default --env=local"
 alias aqc="art queue:clear --queue=default --env=local"
 
 function ac {
@@ -56,6 +54,29 @@ function pat() {
   art test -d memory_limit=6144M --verbose "$args"
 }
 
+function flaky() {
+  runs=1
+  output=""
+
+  failed=false
+
+  while [ "$failed" != "true" ]
+  do
+    output=$(php artisan test -d memory_limit=6144M --verbose --filter="$1")
+
+    if "$output" 2>&1 | grep -q -wi "FAIL"
+    then
+      failed=true
+    fi
+
+    $failed && echo "Run $runs failed" || echo "Run $runs passed"
+
+    ((runs++))
+  done
+
+  echo "$output"
+}
+
 # PHPStan
 alias psc="phpstan analyse --ansi --memory-limit=8G"
 alias psb="phpstan --generate-baseline --memory-limit=8G"
@@ -66,6 +87,8 @@ alias pgb="vendor/bin/phpstan --generate-baseline --memory-limit=4G"
 alias vgp="vendor-patches generate && composer update --lock"
 
 # ======== GIT ======== #
+alias nah="git stash && git stash drop"
+
 comme () {
   git add --all
   if (($# > 1))
@@ -103,6 +126,7 @@ function sp:types() {
 
 # ======== VIM & TMUXIFIER ======== #
 [ "$(which nvim)" != "" ] && alias vim="nvim"
+
 function tls {
   tmuxifier load-session "$1"
 }
