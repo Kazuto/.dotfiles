@@ -24,6 +24,7 @@ local plugins = {
 	},
 
 	"tpope/vim-repeat",
+	"tpope/vim-surround",
 	"tpope/vim-sleuth",
 	{
 		"lewis6991/gitsigns.nvim",
