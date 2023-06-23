@@ -3,9 +3,6 @@ if not status then
 	return
 end
 
-vim.keymap.set('n', '<F1>', ':FloatermToggle scratch<CR>')
-vim.keymap.set('t', '<F1>', '<C-\\><C-n>:FloatermToggle scratch<CR>')
-
 toggleterm.setup({
 	size = 20,
 	open_mapping = [[<F1>]],

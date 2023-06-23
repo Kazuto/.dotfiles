@@ -73,3 +73,5 @@ nvim_tree.setup({
 		},
 	},
 })
+
+vim.keymap.set("n", "<C-b>", vim.cmd.NvimTreeToggle, { desc = "Toggle Nvim Tree" })

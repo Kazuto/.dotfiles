@@ -50,7 +50,7 @@ null_ls.setup({
 
 		formatting.beautysh,
 		formatting.jq,
-		formatting.lua_format,
+		-- formatting.lua_format,
 		formatting.pint,
 		formatting.prettierd.with({
 			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },

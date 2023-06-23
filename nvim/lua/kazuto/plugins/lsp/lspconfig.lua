@@ -5,9 +5,8 @@ end
 
 local opts = {}
 local handlers = require("kazuto.plugins.lsp.handlers")
-local servers = require('kazuto.plugins.lsp.servers')
 
-for _, server in ipairs(servers) do
+for _, server in ipairs(Servers) do
 	opts = {
 		on_attach = handlers.on_attach,
 		capabilities = handlers.capabilities,
@@ -22,16 +21,3 @@ for _, server in ipairs(servers) do
 
 	lspconfig[server].setup(opts)
 end
-
--- local typescript_status, typescript = pcall(require, "typescript")
--- if not typescript_status then
--- 	return
--- end
-
--- configure typescript server with plugin
--- typescript.setup({
--- 	server = {
--- 		on_attach = handlers.on_attach,
--- 		capabilities = handlers.capabilities,
--- 	},
--- })

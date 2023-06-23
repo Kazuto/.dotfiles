@@ -46,3 +46,7 @@ barbar.setup({
 		undotree = true,
 	},
 })
+
+vim.keymap.set("n", "<Tab>", vim.cmd.BufferNext, { desc = "Next Buffer" })
+vim.keymap.set("n", "<S-Tab>", vim.cmd.BufferPrevious, { desc = "Previous Buffer" })
+vim.keymap.set("n", "<C-x>", vim.cmd.BufferClose, { desc = "Close Buffer" })

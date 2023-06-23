@@ -27,44 +27,9 @@ local plugins = {
 	"tpope/vim-surround",
 	"tpope/vim-sleuth",
 
-	{
-		"tommcdo/vim-lion",
-		config = function()
-			require("kazuto.plugins.lion")
-		end,
-	},
+	"tommcdo/vim-lion",
 
-	{
-		"sickill/vim-pasta",
-		config = function()
-			require("kazuto.plugins.pasta")
-		end,
-	},
-
-	{
-		"lewis6991/gitsigns.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		config = function()
-			require("kazuto.plugins.gitsigns")
-		end,
-	},
-
-	{
-		"windwp/nvim-autopairs",
-		config = function()
-			require("kazuto.plugins.autopairs")
-		end,
-		event = "InsertEnter",
-	},
-
-	{
-		"RRethy/vim-illuminate",
-		config = function()
-			require("kazuto.plugins.illuminate")
-		end,
-	},
+	"sickill/vim-pasta",
 
 	-- ====== APPEARANCE ======
 
@@ -83,9 +48,6 @@ local plugins = {
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-		config = function()
-			require("kazuto.plugins.nvim-tree")
-		end,
 	},
 
 	-- Statusline
@@ -94,9 +56,6 @@ local plugins = {
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-		config = function()
-			require("kazuto.plugins.lualine")
-		end,
 	},
 
 	-- Beautify tabs
@@ -106,9 +65,13 @@ local plugins = {
 			"lewis6991/gitsigns.nvim",
 			"nvim-tree/nvim-web-devicons",
 		},
-		config = function()
-			require("kazuto.plugins.barbar")
-		end,
+	},
+
+	{
+		"lewis6991/gitsigns.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
 	},
 
 	-- Show a dashboard when opening vim
@@ -117,44 +80,31 @@ local plugins = {
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-		config = function()
-			require("dashboard")
-		end,
 		event = "VimEnter",
 	},
 
 	-- Add indentation guides even on blank lines
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		config = function()
-			require("kazuto.plugins.indent-blankline")
-		end,
-	},
+	"lukas-reineke/indent-blankline.nvim",
 
 	-- ====== UTILITY ======
 
 	-- Useful plugin to show you pending keybinds.
-	{
-		"folke/which-key.nvim",
-		config = function()
-			require("kazuto.plugins.which-key")
-		end,
-	},
+	"folke/which-key.nvim",
 
 	-- 'gc' to comment visual regions/lines
-	{
-		"numToStr/Comment.nvim",
-		config = function()
-			require("kazuto.plugins.comment")
-		end,
-	},
+
+	"numToStr/Comment.nvim",
+	"AndrewRadev/splitjoin.vim",
 
 	{
-		"AndrewRadev/splitjoin.vim",
-		config = function()
-			require("kazuto.plugins.splitjoin")
-		end,
+		"windwp/nvim-autopairs",
+		dependencies = {
+			"hrsh7th/nvim-cmp",
+		},
+		event = "InsertEnter",
 	},
+
+	"RRethy/vim-illuminate",
 
 	-- Quick access to attached files
 	{
@@ -162,9 +112,6 @@ local plugins = {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
-		config = function()
-			require("kazuto.plugins.harpoon")
-		end,
 	},
 
 	-- Show definitions etc.
@@ -182,30 +129,19 @@ local plugins = {
 			{ "nvim-tree/nvim-web-devicons" },
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		},
-		config = function()
-			require("kazuto.plugins.telescope")
-		end,
 	},
 
+	-- Highlight, edit, and navigate code
 	{
-		-- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
-		config = function()
-			require("kazuto.plugins.treesitter")
-		end,
 	},
 
 	-- Add terminals
-	{
-		"akinsho/toggleterm.nvim",
-		config = function()
-			require("kazuto.plugins.toggleterm")
-		end,
-	},
+	"akinsho/toggleterm.nvim",
 
 	-- ====== LSP =====
 
@@ -215,9 +151,6 @@ local plugins = {
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
 		},
-		config = function()
-			require("kazuto.plugins.lsp.mason")
-		end,
 		build = ":MasonUpdate",
 	},
 
@@ -228,9 +161,6 @@ local plugins = {
 			"williamboman/mason-lspconfig.nvim",
 			"b0o/schemastore.nvim",
 		},
-		config = function()
-			require("kazuto.plugins.lsp.lspconfig")
-		end,
 	},
 
 	{
@@ -241,27 +171,18 @@ local plugins = {
 			--Please make sure you install markdown and markdown_inline parser
 			"nvim-treesitter/nvim-treesitter",
 		},
-		config = function()
-			require("kazuto.plugins.lsp.lspsaga")
-		end,
 		event = "LspAttach",
 	},
 
 	"jose-elias-alvarez/typescript.nvim",
-
-	{
-		"jose-elias-alvarez/null-ls.nvim",
-		config = function()
-			require("kazuto.plugins.lsp.null-ls")
-		end,
-	},
+	"jose-elias-alvarez/null-ls.nvim",
 
 	-- Autocompletion
 	{
 		"L3MON4D3/LuaSnip",
-		config = function()
-			require("kazuto.plugins.luasnip")
-		end,
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+		},
 	},
 
 	{
@@ -272,20 +193,11 @@ local plugins = {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",
 			"saadparwaiz1/cmp_luasnip",
-			"rafamadriz/friendly-snippets",
 			"onsails/lspkind.nvim",
 		},
-		config = function()
-			require("kazuto.plugins.nvim-cmp")
-		end,
 	},
 
-	{
-		"Exafunction/codeium.vim",
-		config = function()
-			require("kazuto.plugins.codium")
-		end,
-	},
+	"Exafunction/codeium.vim",
 }
 
 local opts = {}
