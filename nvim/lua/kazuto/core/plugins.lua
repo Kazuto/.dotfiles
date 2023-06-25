@@ -14,26 +14,23 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	"mbbill/undotree",
+	--[[
+	  =================
+		BASE DEPENDENCIES
+		=================
+	--]]
 
-	{
-		"tpope/vim-fugitive",
-		dependencies = {
-			"tpope/vim-rhubarb",
-		},
-	},
+	"nvim-tree/nvim-web-devicons",
+	"nvim-lua/plenary.nvim",
+	"lewis6991/gitsigns.nvim",
+	"hrsh7th/nvim-cmp",
 
-	"tpope/vim-repeat",
-	"tpope/vim-surround",
-	"tpope/vim-sleuth",
+	--[[
+		=================
+		APPEARANCE
+		=================
+	--]]
 
-	"tommcdo/vim-lion",
-
-	"sickill/vim-pasta",
-
-	-- ====== APPEARANCE ======
-
-	-- Vim Theme
 	{
 		"catppuccin/nvim",
 		as = "catppuccin",
@@ -42,91 +39,61 @@ local plugins = {
 		end,
 	},
 
-	-- Tree view
+	"nvim-tree/nvim-tree.lua",  -- Tree File View
+	"nvim-lualine/lualine.nvim", -- Nvim Status Line
+
+	"romgrk/barbar.nvim",       -- Beautify tabs
+
+	{ "glepnir/dashboard-nvim", event = "VimEnter" },
+
+	"lukas-reineke/indent-blankline.nvim", -- Add indentation guides
+
+	--[[
+		=================
+		UTILITY
+		=================
+	--]]
+
+	"mbbill/undotree", -- Show changes to a file
+
 	{
-		"nvim-tree/nvim-tree.lua",
+		"tpope/vim-fugitive",
 		dependencies = {
-			"nvim-tree/nvim-web-devicons",
+			"tpope/vim-rhubarb",
 		},
 	},
 
-	-- Statusline
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-	},
+	"tpope/vim-repeat",  -- Allow plugins to hook into repeat (.)
+	"tpope/vim-surround", -- Replace surrounding quotes or tags
+	"tpope/vim-sleuth",  -- Automatically detect indentation
 
-	-- Beautify tabs
-	{
-		"romgrk/barbar.nvim",
-		dependencies = {
-			"lewis6991/gitsigns.nvim",
-			"nvim-tree/nvim-web-devicons",
-		},
-	},
+	"tommcdo/vim-lion",  -- Align text by characters
 
-	{
-		"lewis6991/gitsigns.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-	},
+	"sickill/vim-pasta",
 
-	-- Show a dashboard when opening vim
-	{
-		"glepnir/dashboard-nvim",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		event = "VimEnter",
-	},
+	"folke/which-key.nvim",                            -- Useful plugin to show you pending keybinds.
 
-	-- Add indentation guides even on blank lines
-	"lukas-reineke/indent-blankline.nvim",
+	"numToStr/Comment.nvim",                           -- 'gc' to comment visual regions/lines
 
-	-- ====== UTILITY ======
+	"AndrewRadev/splitjoin.vim",                       -- Split or join lines of code
 
-	-- Useful plugin to show you pending keybinds.
-	"folke/which-key.nvim",
+	"mg979/vim-visual-multi",                          -- Multi-Cursor selection
 
-	-- 'gc' to comment visual regions/lines
+	{ "windwp/nvim-autopairs",  event = "InsertEnter" }, -- Add closing brackets, parentheses, quotes
 
-	"numToStr/Comment.nvim",
-	"AndrewRadev/splitjoin.vim",
+	"RRethy/vim-illuminate",                           -- Code occurrence highlighting
 
-	{
-		"windwp/nvim-autopairs",
-		dependencies = {
-			"hrsh7th/nvim-cmp",
-		},
-		event = "InsertEnter",
-	},
+	"theprimeagen/harpoon",                            -- Quick access to attached files
 
-	"RRethy/vim-illuminate",
+	"preservim/tagbar",                                -- Show definitions etc. !required ctags!
 
-	-- Quick access to attached files
-	{
-		"theprimeagen/harpoon",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-	},
-
-	-- Show definitions etc.
-	"preservim/tagbar", -- required ctags
-
-	-- tmux & split window navigation
-	"christoomey/vim-tmux-navigator",
+	"christoomey/vim-tmux-navigator",                  -- tmux & split window navigation
 
 	-- Fuzzy Finder (files, lsp, etc)
 	{
 		"nvim-telescope/telescope.nvim",
 		version = "*",
 		dependencies = {
-			{ "nvim-lua/plenary.nvim" },
-			{ "nvim-tree/nvim-web-devicons" },
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		},
 	},
@@ -143,23 +110,21 @@ local plugins = {
 	-- Add terminals
 	"akinsho/toggleterm.nvim",
 
-	-- ====== LSP =====
+	--[[
+		=================
+		LSP
+		=================
+	--]]
 
 	-- Managing / Installing LSP servers
 	{
-		"williamboman/mason.nvim",
-		dependencies = {
-			"williamboman/mason-lspconfig.nvim",
-		},
-		build = ":MasonUpdate",
-	},
-
-	-- Configuring LSP servers
-	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
+			{ "williamboman/mason.nvim", config = true },
 			"williamboman/mason-lspconfig.nvim",
-			"b0o/schemastore.nvim",
+			"b0o/schemastore.nvim",                          -- Collection of schemas
+			{ "j-hui/fidget.nvim",       tag = "legacy", opts = {} }, -- Useful status updates
+			"folke/neodev.nvim",                             -- Additional lua configuration, makes nvim stuff amazing!
 		},
 	},
 
@@ -168,23 +133,14 @@ local plugins = {
 		branch = "main",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
-			--Please make sure you install markdown and markdown_inline parser
 			"nvim-treesitter/nvim-treesitter",
 		},
 		event = "LspAttach",
 	},
 
-	"jose-elias-alvarez/typescript.nvim",
 	"jose-elias-alvarez/null-ls.nvim",
 
 	-- Autocompletion
-	{
-		"L3MON4D3/LuaSnip",
-		dependencies = {
-			"rafamadriz/friendly-snippets",
-		},
-	},
-
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
@@ -194,6 +150,7 @@ local plugins = {
 			"hrsh7th/cmp-path",
 			"saadparwaiz1/cmp_luasnip",
 			"onsails/lspkind.nvim",
+			"rafamadriz/friendly-snippets",
 		},
 	},
 
