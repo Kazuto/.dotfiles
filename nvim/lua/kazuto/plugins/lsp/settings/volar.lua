@@ -1,3 +1,3 @@
 return {
-	filetypes = { 'typescript', 'javascript', 'vue' }
+	filetypes = { "typescript", "javascript", "vue" },
 }

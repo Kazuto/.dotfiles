@@ -9,4 +9,3 @@ vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "[S]plit window [V]ertical"
 vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "[S]plit window [H]orizontal" })
 vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "[S]plit window [E]qual" })
 vim.keymap.set("n", "<leader>sx", ":close<CR>", { desc = "[S]plit window E[x]it" })
-
