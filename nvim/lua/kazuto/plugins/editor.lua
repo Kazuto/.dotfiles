@@ -97,11 +97,13 @@ local telescope = {
     telescope.load_extension("fzf")
   end,
   keys = {
-    { "<leader>ff", ":Telescope find_files<CR>",  desc = "[F]ind [F]iles" },
-    { "<leader>fs", ":Telescope live_grep<CR>",   desc = "[F]ind [W]ord" },
-    { "<leader>fc", ":Telescope grep_string<CR>", desc = "[F]ind [C]ursor" },
-    { "<leader>fb", ":Telescope buffers<CR>",     desc = "[F]ind [B]ufffer" },
-    { "<leader>fh", ":Telescope help_tags<CR>",   desc = "[F]ind [H]elp" },
+    { "<leader>ff", ":Telescope find_files<CR>",                                        desc = "[F]ind [F]iles" },
+    { "<leader>fa", ":Telescope find_files follow=true no_ingore=true hidden=true<CR>", desc = "[F]ind [A]ll" },
+    { "<leader>fs", ":Telescope live_grep<CR>",                                         desc = "[F]ind [W]ord" },
+    { "<leader>fc", ":Telescope grep_string<CR>",                                       desc = "[F]ind [C]ursor" },
+    { "<leader>fb", ":Telescope buffers<CR>",                                           desc = "[F]ind [B]ufffer" },
+    { "<leader>fo", ":Telescope oldfiles<CR>",                                          desc = "[F]ind [O]ld files" },
+    { "<leader>fh", ":Telescope help_tags<CR>",                                         desc = "[F]ind [H]elp" },
   },
 }
 

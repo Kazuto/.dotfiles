@@ -40,6 +40,7 @@ vim.g.barbar_auto_setup = false
 
 local barbar = {
   "romgrk/barbar.nvim",
+  lazy = false,
   dependencies = {
     "lewis6991/gitsigns.nvim",
     "nvim-tree/nvim-web-devicons",

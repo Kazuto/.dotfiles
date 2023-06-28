@@ -41,6 +41,7 @@ local lspconfig = {
     end
   end,
 }
+
 local null_ls = {
   "jose-elias-alvarez/null-ls.nvim",
   config = function()
@@ -131,9 +132,7 @@ local mason = {
   config = function()
     require("mason").setup()
 
-    local mason_lsp = require("mason-lspconfig")
-
-    mason_lsp.setup({
+    require("mason-lspconfig").setup({
       ensure_installed = servers,
       automatic_installation = true,
     })

@@ -24,8 +24,6 @@ local cmp = {
   },
   config = function()
     local cmp = require("cmp")
-    local luasnip = require("luasnip")
-    local lspkind = require("lspkind")
 
     require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -43,7 +41,7 @@ local cmp = {
       }),
       snippet = {
         expand = function(args)
-          luasnip.lsp_expand(args.body)
+          require("luasnip").lsp_expand(args.body)
         end,
       },
       sources = cmp.config.sources({
@@ -53,7 +51,7 @@ local cmp = {
         { name = "path" }, -- file system paths
       }),
       formatting = {
-        format = lspkind.cmp_format({
+        format = require("lspkind").cmp_format({
           maxwidth = 50,
           ellipsis_char = "...",
         }),
@@ -70,6 +68,7 @@ vim.g.codeium_disable_bindings = 1
 
 local codium = {
   "Exafunction/codeium.vim",
+  lazy = false,
   keys = {
     {
       "<C-CR>",
@@ -78,6 +77,7 @@ local codium = {
       end,
       desc = "Accept Suggestion",
       expr = true,
+      mode = "i",
     },
     {
       "<C-;>",
@@ -86,6 +86,8 @@ local codium = {
       end,
       desc = "Next Suggestion",
       expr = true,
+      noremap = true,
+      mode = "i",
     },
     {
       "<C-,>",
@@ -94,6 +96,7 @@ local codium = {
       end,
       desc = "Previous Suggestion",
       expr = true,
+      mode = "i",
     },
     {
       "<C-x>",
@@ -102,6 +105,7 @@ local codium = {
       end,
       desc = "Clear Suggestions",
       expr = true,
+      mode = "i",
     },
   },
 }
