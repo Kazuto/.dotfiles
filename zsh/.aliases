@@ -48,7 +48,7 @@ function ac {
 }
 
 function pat() {
-  if [ $# -eq 0 ] 
+  if [ $# -eq 0 ]
   then args="--testdox"
   else args="--filter=$1"
   fi
