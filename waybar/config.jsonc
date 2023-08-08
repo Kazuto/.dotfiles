@@ -7,8 +7,8 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
-        "clock",
-        "custom/spotify",
+        "clock"
+        // "custom/spotify"
     ],
     // "modules-center": ["hyprland/window"],
     "modules-center": ["wlr/workspaces"],
@@ -17,11 +17,10 @@
         "cpu",
         "memory",
         "network",
-        "custom/updates",
         "pulseaudio"
         // "pulseaudio#microphone"
     ],
     "include": [
-        "$HOME/.config/waybar/modules.jsonc",
+        "$HOME/.config/waybar/modules.jsonc"
     ]
 }

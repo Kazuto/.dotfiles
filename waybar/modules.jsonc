@@ -32,23 +32,13 @@
             "3": ["DP-1"],
             "4": ["DP-1"],
             "5": ["DP-1"],
-            "6": ["DP-1"],
-            "7": ["DP-1"],
-            "8": ["DP-1"],
-            "9": ["DP-1"],
-            "10": ["DP-1"],
-            "11": ["DP-2"],
-            "12": ["DP-2"],
-            "13": ["DP-2"],
-            "14": ["DP-2"],
-            "15": ["DP-2"],
-            "16": ["DP-2"],
-            "17": ["DP-2"],
-            "18": ["DP-2"],
-            "19": ["DP-2"],
-            "20": ["DP-2"],
+            "6": ["DP-2"],
+            "7": ["DP-2"],
+            "8": ["DP-2"],
+            "9": ["DP-2"],
+            "10": ["DP-2"]
         },
-        "sort-by-number": true,
+        "sort-by-number": true
     },
 
     "hyprland/window": {
@@ -61,7 +51,7 @@
     },
 
     "custom/spotify": {
-        "exec": "/usr/bin/python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
+        "exec": "python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
         "format": "  {}",
         "return-type": "json",
         "on-click": "playerctl play-pause",
@@ -90,15 +80,6 @@
         "interval": 5,
         "format": "󰶡 {bandwidthDownBits}",
         "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
-    },
-
-    "custom/updates": {
-        "format": "󰚰 {}",
-        "interval": 7200,                     // every two hours
-        "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'",       // # of updates and tooltip details
-        "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "on-click": "kitty -e sudo pacman -Syu", // update system
-        "signal": 8
     },
 
     "pulseaudio": {

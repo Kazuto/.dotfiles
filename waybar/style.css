@@ -44,18 +44,21 @@ tooltip {
 #workspaces button {
   box-shadow: unset;
   border: unset;
-  
+
   padding: 6px 9px 6px 6px;
 
   color: #313244;
+  background: none;
 }
 
 #workspaces button.active {
   color: #A6ADC8;
+  background: none;
 }
 
 #workspaces button.focused {
   color: #A6ADC8;
+  background: none;
   outline: none;
 }
 
@@ -67,6 +70,7 @@ tooltip {
 
 #workspaces button:hover {
   color: #FAB387;
+  background: none;
 }
 
 #clock {
@@ -112,7 +116,7 @@ tooltip {
 
 #pulseaudio {
   color: #CBA6F7;
-  border-radius: 0px 10px 10px 0px;
+  border-radius: 10px;
   margin-right: 5px;
 }
 
