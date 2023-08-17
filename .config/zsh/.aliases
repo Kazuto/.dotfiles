@@ -5,11 +5,17 @@
 [ "$(which exa)" != "" ] && alias ls="exa --icons $@"
 [ "$(which trash)" != "" ] && alias rm="trash"
 
+# Copy and paste from terminal
+[ "$(which xclip)" != "" ] && alias pbcopy="xclip -sel clip";
+[ "$(which xclip)" != "" ] && alias pbpaste="xclip -sel clip -o";
+
+alias dotfiles="cd ~/.dotfiles && vim ."
+
 # clearing terminal
 alias c="clear"
 
 # sourcing shell config
-alias s="source ~/.zshrc"
+alias s="source ~/.config/zsh/.zshrc"
 
 # file listing
 alias l="ls -lah"
@@ -46,7 +52,7 @@ function ac {
 }
 
 function pat() {
-  if [ $# -eq 0 ] 
+  if [ $# -eq 0 ]
   then args="--testdox"
   else args="--filter=$1"
   fi

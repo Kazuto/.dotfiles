@@ -14,6 +14,7 @@ fi
 [ -d "/usr/local/opt/php@7.4/bin" ] && export PATH=/usr/local/opt/php@7.4/bin:$PATH
 [ -d "$HOME/.composer/vendor/bin" ] && export PATH=$HOME/.composer/vendor/bin:$PATH
 [ -d "$HOME/.local/bin" ] && export PATH=$HOME/.local/bin:$PATH
+[ -d "$HOME/.cargo/bin" ] && export PATH=$HOME/.cargo/bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -126,8 +127,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-[ -f "$HOME/.aliases" ] && source $HOME/.aliases
-[ -f "$HOME/.after" ] && source $HOME/.after
+[ -f "$HOME/.config/zsh/.aliases" ] && source $HOME/.config/zsh/.aliases
+[ -f "$HOME/.config/zsh/.after" ] && source $HOME/.config/zsh/.after
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
