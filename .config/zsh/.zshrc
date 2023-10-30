@@ -15,13 +15,10 @@ fi
 [ -d "$HOME/.composer/vendor/bin" ] && export PATH=$HOME/.composer/vendor/bin:$PATH
 [ -d "$HOME/.local/bin" ] && export PATH=$HOME/.local/bin:$PATH
 [ -d "$HOME/.cargo/bin" ] && export PATH=$HOME/.cargo/bin:$PATH
+[ -d "$HOME/Library/Application Support/Herd/bin" ] && export PATH=$HOME/Library/Application\ Support/Herd/bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# Load tmuxifier
-[ -d "$HOME/.tmuxifier/bin" ] && export PATH=$HOME/.tmuxifier/bin:$PATH
-eval "$(tmuxifier init -)"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh

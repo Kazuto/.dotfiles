@@ -9,7 +9,7 @@
 [ "$(which xclip)" != "" ] && alias pbcopy="xclip -sel clip";
 [ "$(which xclip)" != "" ] && alias pbpaste="xclip -sel clip -o";
 
-alias dotfiles="cd ~/.dotfiles && vim ."
+alias dotfiles="cd ~/.dotfiles && nvim ."
 
 # clearing terminal
 alias c="clear"
@@ -57,7 +57,7 @@ function pat() {
   else args="--filter=$1"
   fi
 
-  art test -d memory_limit=6144M --verbose "$args"
+  art test -d memory_limit=6144M "$args"
 }
 
 function flaky() {
@@ -92,6 +92,12 @@ alias pix="vendor/bin/pint"
 alias pgb="vendor/bin/phpstan --generate-baseline --memory-limit=4G"
 alias vgp="vendor-patches generate && composer update --lock"
 
+phpstan:baseline () {
+  vendor/bin/phpstan clear-result-cache &&
+  composer fresh:php &&
+  vendor/bin/phpstan --generate-baseline --memory-limit=8G
+}
+
 # ======== GIT ======== #
 alias nah="git stash && git stash drop"
 
@@ -114,6 +120,10 @@ git:clean () {
   git branch --merged master | xargs git branch -d
 }
 
+git:forget () {
+  git rm --cached -r "$1"
+}
+
 # ======== SUPABASE ======== #
 alias sp="supabase"
 alias sp:start="sp start"
@@ -132,11 +142,3 @@ function sp:types() {
 
 # ======== VIM & TMUXIFIER ======== #
 [ "$(which nvim)" != "" ] && alias vim="nvim"
-
-function tls {
-  tmuxifier load-session "$1"
-}
-
-function tms {
-  tmuxifier new-session "$1"
-}
